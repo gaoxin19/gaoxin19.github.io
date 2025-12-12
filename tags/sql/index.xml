@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>SQL on 胡思乱</title>
+    <link>https://gaoxin19.github.io/tags/sql/</link>
+    <description>Recent content in SQL on 胡思乱</description>
+    <generator>Hugo -- 0.152.2</generator>
+    <language>zh</language>
+    <lastBuildDate>Thu, 21 Aug 2025 12:10:38 +0800</lastBuildDate>
+    <atom:link href="https://gaoxin19.github.io/tags/sql/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>从笛卡尔积看 SQL JOIN 性能</title>
+      <link>https://gaoxin19.github.io/post/from-cartesian-product-sql-join-performance/</link>
+      <pubDate>Thu, 21 Aug 2025 12:10:38 +0800</pubDate>
+      <guid>https://gaoxin19.github.io/post/from-cartesian-product-sql-join-performance/</guid>
+      <description>&lt;h3 id=&#34;1-join的统一模型笛卡尔积与过滤&#34;&gt;&lt;strong&gt;1. JOIN的统一模型：笛卡尔积与过滤&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;要理解任何 &lt;code&gt;JOIN&lt;/code&gt; 的性能，必须回归其最根本的数学模型。无论是 &lt;code&gt;INNER JOIN&lt;/code&gt; 还是 &lt;code&gt;OUTER JOIN&lt;/code&gt;，其逻辑上都可以分解为以下步骤：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;生成组合 (Combination)&lt;/strong&gt;：计算两张表的笛卡尔积（Cartesian Product），即 &lt;code&gt;表A行数 × 表B行数&lt;/code&gt; 的全量组合。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;应用条件 (Filtering)&lt;/strong&gt;：使用 &lt;code&gt;ON&lt;/code&gt; 子句作为过滤器，在全量组合中筛选出满足条件的行。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;补充数据 (Augmentation - 仅外连接)&lt;/strong&gt;：对于 &lt;code&gt;OUTER JOIN&lt;/code&gt;，需要将“保留表”（如 &lt;code&gt;LEFT JOIN&lt;/code&gt; 中的左表）中未能匹配的行补充回来，并将另一表的字段填充为 &lt;code&gt;NULL&lt;/code&gt;。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;这个模型可以用以下流程图来概念化：&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
